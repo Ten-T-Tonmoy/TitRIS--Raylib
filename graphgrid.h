@@ -12,6 +12,7 @@ public:
     void buildgraph();
     void showgraph();
     void drawgraph();
+    bool isoutside(int row, int col);
 
 private:
     int rows, cols, size;

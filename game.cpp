@@ -36,3 +36,52 @@ void Game::draw()
     graph.drawgraph();
     current.drawTile();
 }
+
+void Game::InputManage()
+{
+    int input = GetKeyPressed();
+    switch (input)
+    {
+    case KEY_A:
+        moveleft();
+        break;
+    case KEY_D:
+        moveright();
+        break;
+    case KEY_S:
+        movedown();
+        break;
+    case KEY_W:
+        current.rotate();
+        break;
+    }
+}
+void Game::moveleft()
+{
+    current.move(0, -1);
+    if (istileout())
+        current.move(0, 1);
+}
+void Game::moveright()
+{
+    current.move(0, 1);
+    if (istileout())
+        current.move(0, -1);
+}
+void Game::movedown()
+{
+    current.move(1, 0);
+    if (istileout())
+        current.move(-1, 0);
+}
+
+bool Game::istileout()
+{
+    vector<Position> boxes = current.newpos();
+    for (Position box : boxes)
+    {
+        if (graph.isoutside(box.row, box.cols))
+            return true;
+    }
+    return false;
+}

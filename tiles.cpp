@@ -58,3 +58,13 @@ vector<Position> Tiles::newpos()
     }
     return movedstate;
 }
+
+void Tiles::rotate()
+{
+    // ps roation==rotation!
+    roation++;
+    if (roation == cells.size())
+    {
+        roation = 0;
+    }
+}

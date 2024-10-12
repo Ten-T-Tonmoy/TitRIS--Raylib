@@ -15,13 +15,14 @@ public:
     map<int, vector<Position>> cells;
     void drawTile();
     void move(int row, int col);
+    vector<Color> combocolor();
+    vector<Position> newpos();
+    void rotate();
 
 private:
     int cellsize;
     int roation;
     vector<Color> colors;
-    vector<Color> combocolor();
-    vector<Position> newpos();
     int rowoff; // row offset
     int coloff; // coloumn offset
 };

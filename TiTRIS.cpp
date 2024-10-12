@@ -24,6 +24,7 @@ int main()
     SetTargetFPS(60);
     while (WindowShouldClose() == false)
     {
+        game.InputManage();
         BeginDrawing();
         ClearBackground(DARKBLUE);
         game.draw();

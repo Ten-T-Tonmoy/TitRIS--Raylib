@@ -64,3 +64,14 @@ void Graph::drawgraph()
         }
     }
 }
+
+bool Graph::isoutside(int row, int col)
+{
+    // row and col are cell position
+    // so its checking cells
+    if (row >= 0 && row < rows && col >= 0 && col < cols)
+    {
+        return false;
+    }
+    return true;
+}
