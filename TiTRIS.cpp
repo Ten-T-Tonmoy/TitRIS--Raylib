@@ -1,6 +1,8 @@
 #include <iostream>
 #include <raylib.h>
-#include "graphgrid.h"
+#include "game.h"
+
+// Main game FILE
 
 #define DARKBLUE \
     (Color) { 0, 82, 172, 255 }
@@ -16,15 +18,15 @@
 int main()
 {
 
-    InitWindow(450, 900, "!!TITRIS!!");
+    InitWindow(300, 600, "!!---TITRIS---!!");
 
-    Graph graph;
-    graph.showgraph();
+    Game game;
+    SetTargetFPS(60);
     while (WindowShouldClose() == false)
     {
         BeginDrawing();
-        ClearBackground(DARKPURPLE);
-
+        ClearBackground(DARKBLUE);
+        game.draw();
         EndDrawing();
     }
     CloseWindow();
